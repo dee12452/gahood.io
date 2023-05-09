@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gahoodio/const.dart';
+import 'package:gahoodio/widgets/description_text.dart';
 
 class MyTimeline extends StatelessWidget {
   const MyTimeline({super.key});
@@ -7,8 +9,9 @@ class MyTimeline extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [
-        const Text(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: const [
+        Text(
           'Timeline',
           style: TextStyle(
             fontSize: 48,
@@ -17,64 +20,124 @@ class MyTimeline extends StatelessWidget {
             letterSpacing: 1.2,
           ),
         ),
-        const SizedBox(
-          height: 10,
+        SizedBox(
+          width: 200,
+          height: 20,
+          child: Divider(
+            thickness: 2,
+          ),
         ),
-        _TimelineItem(),
+        _TimelineItem(
+          imageFile: 'assets/coupa.png',
+          date: 'December 2022',
+          title: 'Senior Software Engineer',
+          location: 'Coupa Software - Seattle, WA (Hybrid)',
+          description: coupaJobDescription,
+        ),
+        _TimelineItem(
+          imageFile: 'assets/appomni.png',
+          date: 'March 2022',
+          title: 'Senior Software Engineer',
+          location: 'AppOmni - Remote',
+          description: appOmniJobDescription,
+        ),
+        _TimelineItem(
+          imageFile: 'assets/appomni.png',
+          date: 'August 2021',
+          title: 'Software Engineer',
+          location: 'GoGuardian - Remote',
+          description: goguardianJobDescription,
+        ),
+        _TimelineItem(
+          imageFile: 'assets/yapta.png',
+          date: 'January 2018',
+          title: 'Software Engineer',
+          location: 'Yapta / Coupa - Seattle, WA (Hybrid)',
+          description: yaptaJobDescription,
+        ),
+        _TimelineItem(
+          imageFile: '',
+          date: 'August 2016',
+          title: 'Graduation from University',
+          location: 'University of Washington - Bothell',
+          description: 'Earned a Bachelor’s of Science degree in Computer Science and Software Engineering, with an overall GPA of 3.6.',
+        ),
+        _TimelineItem(
+          imageFile: 'assets/tecace.png',
+          date: 'June 2016',
+          title: 'Software Engineer',
+          location: 'Tecace - Bellevue, WA',
+          description: tecaceJobDescription,
+        ),
       ],
     );
   }
 }
 
 class _TimelineItem extends StatelessWidget {
-  const _TimelineItem({super.key});
+  final String imageFile;
+  final String date;
+  final String title;
+  final String location;
+  final String description;
+
+  const _TimelineItem({
+    super.key,
+    required this.imageFile,
+    required this.date,
+    required this.title,
+    required this.location,
+    required this.description,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: <Widget>[
-        Padding(
-          padding: const EdgeInsets.only(left: 50.0),
-          child: Card(
-            margin: const EdgeInsets.all(20.0),
-            child: Container(
-              width: double.infinity,
-              height: 200.0,
-              color: Colors.grey,
-            ),
-          ),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Container(
+          width: 2,
+          height: 50,
+          color: Colors.blueAccent,
         ),
-        Positioned(
-          top: 0.0,
-          bottom: 0.0,
-          left: 35.0,
-          child: Container(
-            height: double.infinity,
-            width: 1.0,
-            color: Colors.blue,
-          ),
-        ),
-        Positioned(
-          top: 100.0,
-          left: 15.0,
-          child: Container(
-            height: 40.0,
-            width: 40.0,
-            decoration: const BoxDecoration(
-              shape: BoxShape.circle,
-              color: Colors.white,
-            ),
-            child: Container(
-              margin: const EdgeInsets.all(5.0),
-              height: 30.0,
-              width: 30.0,
-              decoration: const BoxDecoration(
-                shape: BoxShape.circle,
-                color: Colors.red,
+        DescriptionText(text: date),
+        Container(
+          width: 500,
+          padding: const EdgeInsets.only(top: 10, left: 20.0, right: 20),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(10),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.withOpacity(0.5),
+                spreadRadius: 2,
+                blurRadius: 5,
+                offset: const Offset(0, 2), // changes position of shadow
               ),
-            ),
+            ],
           ),
-        )
+          child: ExpansionTile(
+            title: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                DescriptionText(
+                  text: title,
+                  fontSize: 22,
+                ),
+                DescriptionText(
+                  text: location,
+                  fontSize: 16,
+                ),
+              ],
+            ),
+            children: [
+              DescriptionText(
+                text: description,
+                fontSize: 14,
+              ),
+            ],
+          ),
+        ),
       ],
     );
   }

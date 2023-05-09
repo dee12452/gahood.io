@@ -11,7 +11,7 @@ class App extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: const HomePage(title: 'Adam Charlton'),
+      home: HomePage(title: 'Adam Charlton'),
     );
   }
 }

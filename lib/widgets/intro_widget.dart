@@ -31,7 +31,7 @@ class IntroWidget extends StatelessWidget {
     current = '';
     yield MapEntry(current, false);
     text =
-        'Adam Charlton|Software Developer|6+ years of being a sick code reviewer.|Loves learning complex systems, cooperative environments, and dogs.';
+        'Adam Charlton|Software Developer|6+ years of amazing code reviews.|Loves complex systems, cooperative environments, and dogs.';
     current = '';
     index = 0;
     while (index != text.length) {

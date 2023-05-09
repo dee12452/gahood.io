@@ -33,7 +33,9 @@ dependencies:
 
   cupertino_icons: ^1.0.2
   url_launcher: ^6.1.10
-  timeline_list: ^0.0.3
+  timeline_tile: ^2.0.0
+  fl_chart: ^0.62.0
+  percent_indicator: ^4.2.3
 
 dev_dependencies:
   flutter_test:
