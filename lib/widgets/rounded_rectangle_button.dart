@@ -15,7 +15,8 @@ class RoundedRectangleButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 40),
+      constraints: const BoxConstraints(maxWidth: 200),
+      padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
       decoration: BoxDecoration(
         color: Colors.grey.shade800,
         borderRadius: BorderRadius.circular(10),
@@ -32,16 +33,21 @@ class RoundedRectangleButton extends StatelessWidget {
         onPressed: () => onClick(),
         child: Row(
           children: [
-            Icon(iconData, color: Colors.white,),
+            Icon(
+              iconData,
+              color: Colors.white,
+            ),
             const SizedBox(width: 5),
-            Text(
-              text,
-              style: const TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-                fontSize: 18,
+            Flexible(
+              child: Text(
+                text,
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18,
+                ),
               ),
-            )
+            ),
           ],
         ),
       ),

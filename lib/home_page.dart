@@ -53,39 +53,42 @@ class HomePage extends StatelessWidget {
                             height: 10,
                           ),
                           const DescriptionText(text: aboutMeSection),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          Wrap(
+                            spacing: 8,
+                            runSpacing: 8,
                             children: [
                               RoundedRectangleButton(
-                                text: 'Resume',
-                                onClick: () async {
-                                  await launchUrl(
-                                    Uri.parse(
-                                      'https://drive.google.com/uc?export=download&id=1kpXzy_5f-EAa6cqM2CkmWtSUPKg2qRFu',
-                                    ),
-                                  );
-                                },
-                                iconData: Icons.upload_file,
-                              ),
+                                  text: 'Resume',
+                                  onClick: () async {
+                                    await launchUrl(
+                                      Uri.parse(
+                                        'https://drive.google.com/uc?export=download&id=1kpXzy_5f-EAa6cqM2CkmWtSUPKg2qRFu',
+                                      ),
+                                    );
+                                  },
+                                  iconData: Icons.upload_file,
+                                ),
                               RoundedRectangleButton(
-                                text: 'Contact Me',
-                                onClick: () {
-                                  _scrollController.animateTo(
-                                    _scrollController.position.maxScrollExtent,
-                                    duration: const Duration(milliseconds: 500),
-                                    curve: Curves.easeOut,
-                                  );
-                                },
-                                iconData: Icons.email_outlined,
-                              ),
+                                  text: 'Contact Me',
+                                  onClick: () {
+                                    _scrollController.animateTo(
+                                      _scrollController
+                                          .position.maxScrollExtent,
+                                      duration:
+                                          const Duration(milliseconds: 500),
+                                      curve: Curves.easeOut,
+                                    );
+                                  },
+                                  iconData: Icons.email_outlined,
+                                ),
                             ],
                           ),
                         ],
                       ),
                     ),
-                    Flexible(
+                    const Flexible(
                       child: Column(
-                        children: const [
+                        children: [
                           CircleAvatar(
                             backgroundImage: AssetImage(
                               'assets/profilepic.jpg',
@@ -143,9 +146,9 @@ class HomePage extends StatelessWidget {
                     thickness: 2,
                   ),
                 ),
-                Column(
+                const Column(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
+                  children: [
                     DescriptionText(text: 'Adam Charlton'),
                     DescriptionText(text: '661-904-4938'),
                     DescriptionText(text: 'adam.charlton12452@gmail.com'),

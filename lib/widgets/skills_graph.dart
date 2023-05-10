@@ -20,110 +20,114 @@ class SkillsGraph extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          SizedBox(
-            height: 400,
-            child: BarChart(
-              BarChartData(
-                backgroundColor: Colors.black12,
-                maxY: 10,
-                gridData: FlGridData(show: false),
-                borderData: FlBorderData(show: false),
-                barGroups: [
-                  BarChartGroupData(
-                    x: 0,
-                    barRods: [
-                      BarChartRodData(toY: 9, color: Colors.red),
-                    ],
-                    showingTooltipIndicators: [0],
-                  ),
-                  BarChartGroupData(
-                    x: 1,
-                    barRods: [
-                      BarChartRodData(toY: 7, color: Colors.green),
-                    ],
-                    showingTooltipIndicators: [0],
-                  ),
-                  BarChartGroupData(
-                    x: 2,
-                    barRods: [
-                      BarChartRodData(toY: 6, color: Colors.orange),
-                    ],
-                    showingTooltipIndicators: [0],
-                  ),
-                  BarChartGroupData(
-                    x: 3,
-                    barRods: [
-                      BarChartRodData(toY: 6, color: Colors.blue),
-                    ],
-                    showingTooltipIndicators: [0],
-                  ),
-                  BarChartGroupData(
-                    x: 4,
-                    barRods: [
-                      BarChartRodData(toY: 4, color: Colors.yellow),
-                    ],
-                    showingTooltipIndicators: [0],
-                  ),
-                  BarChartGroupData(
-                    x: 5,
-                    barRods: [
-                      BarChartRodData(toY: 3, color: Colors.blue.shade200),
-                    ],
-                    showingTooltipIndicators: [0],
-                  ),
-                ],
-                titlesData: FlTitlesData(
-                  show: true,
-                  leftTitles:
-                      AxisTitles(sideTitles: SideTitles(showTitles: false)),
-                  rightTitles:
-                      AxisTitles(sideTitles: SideTitles(showTitles: false)),
-                  topTitles:
-                      AxisTitles(sideTitles: SideTitles(showTitles: false)),
-                  bottomTitles: AxisTitles(
-                    sideTitles: SideTitles(
-                      showTitles: true,
-                      reservedSize: 30,
-                      getTitlesWidget: (idx, meta) {
-                        const style = TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 14,
-                        );
-                        String text;
-                        switch (idx.toInt()) {
-                          case 0:
-                            text = 'Java';
-                            break;
-                          case 1:
-                            text = 'Python';
-                            break;
-                          case 2:
-                            text = 'TypeScript';
-                            break;
-                          case 3:
-                            text = 'Dart';
-                            break;
-                          case 4:
-                            text = 'JavaScript';
-                            break;
-                          case 5:
-                            text = 'Golang';
-                            break;
-                          default:
-                            text = '';
-                        }
-                        return SideTitleWidget(
-                          axisSide: meta.axisSide,
-                          space: 4,
-                          child: Text(text, style: style),
-                        );
-                      },
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: SizedBox(
+              height: 500,
+              width: 500,
+              child: BarChart(
+                BarChartData(
+                  backgroundColor: Colors.black12,
+                  maxY: 10,
+                  gridData: FlGridData(show: false),
+                  borderData: FlBorderData(show: false),
+                  barGroups: [
+                    BarChartGroupData(
+                      x: 0,
+                      barRods: [
+                        BarChartRodData(toY: 9, color: Colors.red),
+                      ],
+                      showingTooltipIndicators: [0],
+                    ),
+                    BarChartGroupData(
+                      x: 1,
+                      barRods: [
+                        BarChartRodData(toY: 7, color: Colors.green),
+                      ],
+                      showingTooltipIndicators: [0],
+                    ),
+                    BarChartGroupData(
+                      x: 2,
+                      barRods: [
+                        BarChartRodData(toY: 6, color: Colors.orange),
+                      ],
+                      showingTooltipIndicators: [0],
+                    ),
+                    BarChartGroupData(
+                      x: 3,
+                      barRods: [
+                        BarChartRodData(toY: 6, color: Colors.blue),
+                      ],
+                      showingTooltipIndicators: [0],
+                    ),
+                    BarChartGroupData(
+                      x: 4,
+                      barRods: [
+                        BarChartRodData(toY: 4, color: Colors.yellow),
+                      ],
+                      showingTooltipIndicators: [0],
+                    ),
+                    BarChartGroupData(
+                      x: 5,
+                      barRods: [
+                        BarChartRodData(toY: 3, color: Colors.blue.shade200),
+                      ],
+                      showingTooltipIndicators: [0],
+                    ),
+                  ],
+                  titlesData: FlTitlesData(
+                    show: true,
+                    leftTitles:
+                        AxisTitles(sideTitles: SideTitles(showTitles: false)),
+                    rightTitles:
+                        AxisTitles(sideTitles: SideTitles(showTitles: false)),
+                    topTitles:
+                        AxisTitles(sideTitles: SideTitles(showTitles: false)),
+                    bottomTitles: AxisTitles(
+                      sideTitles: SideTitles(
+                        showTitles: true,
+                        reservedSize: 30,
+                        getTitlesWidget: (idx, meta) {
+                          const style = TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 14,
+                          );
+                          String text;
+                          switch (idx.toInt()) {
+                            case 0:
+                              text = 'Java';
+                              break;
+                            case 1:
+                              text = 'Python';
+                              break;
+                            case 2:
+                              text = 'TypeScript';
+                              break;
+                            case 3:
+                              text = 'Dart';
+                              break;
+                            case 4:
+                              text = 'JavaScript';
+                              break;
+                            case 5:
+                              text = 'Golang';
+                              break;
+                            default:
+                              text = '';
+                          }
+                          return SideTitleWidget(
+                            axisSide: meta.axisSide,
+                            space: 4,
+                            child: Text(text, style: style),
+                          );
+                        },
+                      ),
                     ),
                   ),
                 ),
+                swapAnimationDuration: const Duration(milliseconds: 200),
               ),
-              swapAnimationDuration: const Duration(milliseconds: 200),
             ),
           ),
           const SizedBox(
@@ -136,18 +140,20 @@ class SkillsGraph extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: const [
-              _ToolPercentIndicator(tool: 'Spring Boot', percent: .75),
-              _ToolPercentIndicator(tool: 'Node.js', percent: .65),
-              _ToolPercentIndicator(tool: 'Flutter', percent: .65),
-              _ToolPercentIndicator(tool: 'Docker', percent: .6),
-              _ToolPercentIndicator(tool: 'Django', percent: .55),
-              _ToolPercentIndicator(tool: 'SQL', percent: .5),
-              _ToolPercentIndicator(tool: 'NoSQL', percent: .5),
-            ],
-          )
+          const SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: [
+                _ToolPercentIndicator(tool: 'Spring Boot', percent: .75),
+                _ToolPercentIndicator(tool: 'Flutter', percent: .65),
+                _ToolPercentIndicator(tool: 'Node.js', percent: .6),
+                _ToolPercentIndicator(tool: 'Docker', percent: .6),
+                _ToolPercentIndicator(tool: 'Django', percent: .55),
+                _ToolPercentIndicator(tool: 'SQL', percent: .45),
+                _ToolPercentIndicator(tool: 'NoSQL', percent: .4),
+              ],
+            ),
+          ),
         ],
       ),
     );
@@ -166,20 +172,18 @@ class _ToolPercentIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          CircularPercentIndicator(
-            radius: 50.0,
-            lineWidth: 8.0,
-            percent: percent,
-            center: Text('${(percent * 100).toInt()}%'),
-            progressColor: Colors.green,
-          ),
-          DescriptionText(text: tool),
-        ],
-      ),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        CircularPercentIndicator(
+          radius: 50.0,
+          lineWidth: 8.0,
+          percent: percent,
+          center: Text('${(percent * 100).toInt()}%'),
+          progressColor: Colors.green,
+        ),
+        DescriptionText(text: tool),
+      ],
     );
   }
 }

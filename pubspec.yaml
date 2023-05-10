@@ -36,6 +36,7 @@ dependencies:
   timeline_tile: ^2.0.0
   fl_chart: ^0.62.0
   percent_indicator: ^4.2.3
+  auto_size_text: ^3.0.0
 
 dev_dependencies:
   flutter_test:

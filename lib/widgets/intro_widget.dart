@@ -75,14 +75,16 @@ class IntroWidget extends StatelessWidget {
               widget = Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
-                    val,
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: fontSize,
-                      // adjust to your desired font size
-                      fontWeight: FontWeight
-                          .bold, // optional: adjust to your desired font weight
+                  Flexible(
+                    child: Text(
+                      val,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: fontSize,
+                        // adjust to your desired font size
+                        fontWeight: FontWeight
+                            .bold, // optional: adjust to your desired font weight
+                      ),
                     ),
                   ),
                   const BlinkingCursor(
@@ -92,13 +94,15 @@ class IntroWidget extends StatelessWidget {
                 ],
               );
             } else {
-              widget = Text(
-                val,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: fontSize, // adjust to your desired font size
-                  fontWeight: FontWeight
-                      .bold, // optional: adjust to your desired font weight
+              widget = Flexible(
+                child: Text(
+                  val,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: fontSize, // adjust to your desired font size
+                    fontWeight: FontWeight
+                        .bold, // optional: adjust to your desired font weight
+                  ),
                 ),
               );
             }
@@ -126,7 +130,8 @@ class IntroWidget extends StatelessWidget {
                           child: HoverImageButton(
                             imageFile: 'assets/linkedin.png',
                             onClick: () async {
-                              await launchUrl(Uri.parse('https://www.linkedin.com/in/adam-charlton-2b059039'));
+                              await launchUrl(Uri.parse(
+                                  'https://www.linkedin.com/in/adam-charlton-2b059039'));
                             },
                           ),
                         ),
@@ -137,7 +142,8 @@ class IntroWidget extends StatelessWidget {
                           child: HoverImageButton(
                             imageFile: 'assets/github.png',
                             onClick: () async {
-                              await launchUrl(Uri.parse('https://github.com/dee12452'));
+                              await launchUrl(
+                                  Uri.parse('https://github.com/dee12452'));
                             },
                           ),
                         ),
