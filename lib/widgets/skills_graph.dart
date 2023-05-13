@@ -24,7 +24,7 @@ class SkillsGraph extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             child: SizedBox(
               height: 500,
-              width: 500,
+              width: 800,
               child: BarChart(
                 BarChartData(
                   backgroundColor: Colors.black12,
@@ -145,11 +145,17 @@ class SkillsGraph extends StatelessWidget {
             child: Row(
               children: [
                 _ToolPercentIndicator(tool: 'Spring Boot', percent: .75),
+                SizedBox(width: 10),
                 _ToolPercentIndicator(tool: 'Flutter', percent: .65),
+                SizedBox(width: 10),
                 _ToolPercentIndicator(tool: 'Node.js', percent: .6),
+                SizedBox(width: 10),
                 _ToolPercentIndicator(tool: 'Docker', percent: .6),
+                SizedBox(width: 10),
                 _ToolPercentIndicator(tool: 'Django', percent: .55),
+                SizedBox(width: 10),
                 _ToolPercentIndicator(tool: 'SQL', percent: .45),
+                SizedBox(width: 10),
                 _ToolPercentIndicator(tool: 'NoSQL', percent: .4),
               ],
             ),

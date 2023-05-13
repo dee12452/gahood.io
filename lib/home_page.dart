@@ -151,7 +151,7 @@ class HomePage extends StatelessWidget {
                   children: [
                     DescriptionText(text: 'Adam Charlton'),
                     DescriptionText(text: '661-904-4938'),
-                    DescriptionText(text: 'adam.charlton12452@gmail.com'),
+                    DescriptionText(text: 'dee12452@gmail.com'),
                   ],
                 ),
                 const SizedBox(
